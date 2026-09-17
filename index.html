@@ -254,6 +254,16 @@
     .steps { display: flex; flex-direction: column; gap: 0; }
     .step {
       display: flex; align-items: flex-start; gap: 14px;
+      position: relative;
+    }
+    .step:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      left: 17.25px;
+      top: 36px;
+      bottom: 0;
+      width: 1.5px;
+      background: linear-gradient(to bottom, var(--pink), transparent);
     }
     .step-num {
       width: 36px; height: 36px; flex-shrink: 0;
@@ -270,11 +280,6 @@
       color: var(--navy); margin-bottom: 4px;
     }
     .step-desc { font-size: 0.8rem; color: #6B7280; line-height: 1.6; }
-    .step-line {
-      width: 1.5px; height: 20px;
-      background: linear-gradient(to bottom, var(--pink), transparent);
-      margin-left: 17px; margin-top: -8px; margin-bottom: -4px;
-    }
 
     /* ══ TESTIMONIALS ══ */
     .testimonials { display: flex; flex-direction: column; gap: 14px; margin-bottom: 24px; }
@@ -603,7 +608,6 @@ document.addEventListener('DOMContentLoaded', () => {
           <p class="step-desc">Fill in your details above. Takes less than 60 seconds. 100% private.</p>
         </div>
       </div>
-      <div class="step-line"></div>
       <div class="step">
         <div class="step-num">2</div>
         <div class="step-body">
@@ -611,7 +615,6 @@ document.addEventListener('DOMContentLoaded', () => {
           <p class="step-desc">Our matchmaker contacts you on WhatsApp for a private 1-on-1 conversation to understand what you're looking for.</p>
         </div>
       </div>
-      <div class="step-line"></div>
       <div class="step">
         <div class="step-num">3</div>
         <div class="step-body">
